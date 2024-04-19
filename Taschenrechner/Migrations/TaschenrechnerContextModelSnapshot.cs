@@ -30,14 +30,6 @@ namespace Taschenrechner.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("eigabePasswort")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("vorherigeOprationen")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
 
                     b.ToTable("Users");

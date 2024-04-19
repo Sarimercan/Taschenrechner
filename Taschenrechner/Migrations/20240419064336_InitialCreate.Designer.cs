@@ -10,7 +10,7 @@ using Taschenrechner.Daten;
 namespace Taschenrechner.Migrations
 {
     [DbContext(typeof(TaschenrechnerContext))]
-    [Migration("20240418085521_InitialCreate")]
+    [Migration("20240419064336_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,14 +29,6 @@ namespace Taschenrechner.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Passwort")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("eigabePasswort")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("vorherigeOprationen")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

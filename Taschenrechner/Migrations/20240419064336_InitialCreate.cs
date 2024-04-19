@@ -31,9 +31,7 @@ namespace Taschenrechner.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Benutzername = table.Column<string>(type: "TEXT", nullable: false),
-                    Passwort = table.Column<string>(type: "TEXT", nullable: false),
-                    vorherigeOprationen = table.Column<string>(type: "TEXT", nullable: false),
-                    eigabePasswort = table.Column<string>(type: "TEXT", nullable: false)
+                    Passwort = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
