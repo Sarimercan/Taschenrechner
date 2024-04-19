@@ -113,7 +113,6 @@ namespace Taschenrechner
             Console.ReadKey();
             Rechnung();
         }
-
         public void Rechnung()
         {
             double zahl1 = 0;
@@ -146,14 +145,15 @@ namespace Taschenrechner
                         Console.WriteLine("Fehler: Division durch Null ist nicht erlaubt.");
                         Console.ReadKey();
                     }
+                    ergebnis = zahl1 / zahl2;
                     break;
                 default:
                     Console.WriteLine("Fehler: Ungültiger Operator.");
                 break;
             }
 
-                // Zeigt Ergebnis an 
-            Console.WriteLine($"Ergebnis: {zahl1 / zahl2}");
+            // Zeigt Ergebnis an 
+            Console.WriteLine($"Ergebnis: {ergebnis}");
             Console.ReadKey();
             AppStart();
         }
