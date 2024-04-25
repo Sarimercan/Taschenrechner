@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Taschenrechner.Daten;
-using Taschenrechner;
+﻿using Taschenrechner.Daten;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Taschenrechner
 {
@@ -67,9 +60,9 @@ namespace Taschenrechner
             dbContext.Users.Add(neuerUser);
             await dbContext.SaveChangesAsync();
 
-            Console.WriteLine("Du wurdest Erfolgreich registriert!");
+            Console.WriteLine("Du wurdest Erfolgreich angemeldet!");
             Console.ReadKey();
-            AppStart();
+            Rechnung();
         }
         public async void Anmelden()
         {
@@ -113,7 +106,7 @@ namespace Taschenrechner
             Console.ReadKey();
             Rechnung();
         }
-        public void Rechnung()
+        public async void Rechnung()
         {
             double zahl1 = 0;
             double zahl2 = 0;
@@ -151,9 +144,20 @@ namespace Taschenrechner
                     Console.WriteLine("Fehler: Ungültiger Operator.");
                 break;
             }
-
-            // Zeigt Ergebnis an 
+           
             Console.WriteLine($"Ergebnis: {ergebnis}");
+
+            Rechnung neueRechnung = new Rechnung
+            {
+                Zahl = zahl1,
+                Zahl2 = zahl2,
+                Ergebnis = ergebnis,
+                Operation = operation
+            };
+
+            dbContext.Rechnungen.Add(neueRechnung);
+            await dbContext.SaveChangesAsync();
+
             Console.ReadKey();
             AppStart();
         }
