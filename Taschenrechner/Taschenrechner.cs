@@ -108,17 +108,15 @@ namespace Taschenrechner
         }
         public async void Rechnung()
         {
-            double zahl1 = 0;
-            double zahl2 = 0;
             double ergebnis = 0;
             Console.Clear();
             Console.WriteLine("Rechung\n");
             Console.Write("Gib die erste Zahl ein: ");
-            zahl1 = Convert.ToDouble(Console.ReadLine());
+            double zahl1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("Gib den Operator (+, -, *, /) ein: ");
             string operation = Console.ReadLine();
             Console.Write("Gib die zweite Zahl ein: ");
-            zahl2 = Convert.ToDouble(Console.ReadLine());
+            double zahl2 = Convert.ToDouble(Console.ReadLine());
 
             // Rechnung
             switch (operation)
